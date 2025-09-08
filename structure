@@ -1,0 +1,52 @@
+frontend/
+├── public/
+│   └── (Static assets like images, fonts, icons, favicon)
+├── src/
+│   ├── assets/
+│   │   ├── images/
+│   │   ├── icons/
+│   │   └── fonts/
+│   ├── components/
+│   │   ├── common/
+│   │   │   ├── Button.tsx
+│   │   │   └── Navbar.tsx
+│   │   ├── layout/
+│   │   │   └── Header.tsx
+│   │   └── ui/
+│   │       └── Input.tsx
+│   ├── sections/
+│   │   ├── Hero/
+│   │   │   ├── Hero.tsx
+│   │   │   └── components/
+│   │   │       └── HeroButton.tsx
+│   │   ├── Features/
+│   │   │   ├── Features.tsx
+│   │   │   └── components/
+│   │   │       ├── FeatureCard.tsx
+│   │   │       └── FeatureIcon.tsx
+│   │   ├── Testimonials/
+│   │   │   ├── Testimonials.tsx
+│   │   │   └── components/
+│   │   │       ├── TestimonialCard.tsx
+│   │   │       └── TestimonialSlider.tsx
+│   │   ├── Pricing/
+│   │   │   ├── Pricing.tsx
+│   │   │   └── components/
+│   │   │       └── PricingCard.tsx
+│   │   └── FooterSection/
+│   │       └── FooterSection.tsx
+│   ├── pages/
+│   │   └── Home.tsx
+│   ├── hooks/
+│   │   ├── useScroll.ts
+│   │   └── useAnimation.ts
+│   ├── utils/
+│   │   ├── constants.ts
+│   │   └── animations.ts
+│   ├── styles/
+│   │   └── globals.css
+│   ├── App.tsx
+│   └── main.tsx
+├── tailwind.config.js
+├── postcss.config.js
+└── package.json
