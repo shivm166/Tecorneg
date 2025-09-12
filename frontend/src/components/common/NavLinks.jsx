@@ -76,8 +76,9 @@ const NavLinks = ({ navItems }) => {
                 onClick={() => console.log('Hire Developers')}
                 transparentOutline 
                 className="
-                    py-2 
-                    px-3 
+                    
+                    py-1
+                    px-2 
                     !text-lg 
                     rounded-full
                     border-1

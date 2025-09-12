@@ -3,45 +3,53 @@ import React from "react";
 import { motion } from "framer-motion";
 import Button from "../../components/common/Button";
 
-// Replace icons with emojis
+// Define the image URLs
+const images = {
+  reportingAnalysis: "https://tecoreng.com/_next/static/media/Reporting-Analysis-web.495ca138.webp",
+  onTimeDelivery: "https://tecoreng.com/_next/static/media/On-Time-Delivery-web.1dff7f31.webp",
+  seamlessCommunication: "https://tecoreng.com/_next/static/media/SeamlessCommunicationWeb.1f75d8f0.webp",
+  postLaunchSupport: "https://tecoreng.com/_next/static/media/game-icons-sands-of-time-web.b861aa2e.webp",
+};
+
+// Update the features array to use URLs and empty strings
 const features = [
   {
-    icon: "📊",
+    icon: images.reportingAnalysis,
     title: "Reporting & Analysis",
     delay: 0.2,
   },
   {
-    icon: "🚚",
+    icon: images.onTimeDelivery,
     title: "On-Time Delivery",
     delay: 0.3,
   },
   {
-    icon: "📞",
+    icon: images.seamlessCommunication,
     title: "Seamless Communication",
     delay: 0.4,
   },
   {
-    icon: "🚀",
+    icon: images.postLaunchSupport,
     title: "Post Launch Support",
     delay: 0.5,
   },
   {
-    icon: "🧪",
+    icon: "", // Blank icon for this card
     title: "Agile Methodology",
     delay: 0.6,
   },
   {
-    icon: "🏆",
+    icon: "", // Blank icon for this card
     title: "Certified Experts",
     delay: 0.7,
   },
   {
-    icon: "💵",
+    icon: "", // Blank icon for this card
     title: "Budget Friendly",
     delay: 0.8,
   },
   {
-    icon: "😊",
+    icon: "", // Blank icon for this card
     title: "100% Client Expectation",
     delay: 0.9,
   },
@@ -68,11 +76,9 @@ const WhyChooseUs = () => {
           variants={fadeInVariants}
           className="text-left mb-12"
         >
-<h2 className="text-6xl sm:text-5xl lg:text-6xl font-extrabold mb-6 outlined-text">
-  WHY TECORENG FOR YOUR NEXT <br /> PROJECT
-</h2>
-
-
+          <h2 className="text-6xl sm:text-5xl lg:text-6xl font-extrabold mb-6 outlined-text">
+            WHY TECORENG FOR YOUR NEXT <br /> PROJECT
+          </h2>
           <p className="text-lg sm:text-xl font-light leading-relaxed mb-8 max-w-3xl font-serif">
             Introducing Technical Core Engineers (TCE), the intersection of
             technology and innovation. At TCE, we excel in delivering
@@ -85,10 +91,8 @@ const WhyChooseUs = () => {
             binary and transform it into extraordinary digital solutions that
             empower your business.
           </p>
-
-          <Button text="GET IN TOUCH" >GET IN TOUCH</Button>
+          <Button text="GET IN TOUCH">GET IN TOUCH</Button>
         </motion.div>
-
         {/* Features Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
           {features.map((feature, index) => (
@@ -102,12 +106,20 @@ const WhyChooseUs = () => {
                 ease: "easeOut",
               }}
               viewport={{ once: true }}
-              className="bg-[#0C1226] border border-blue-600/40 rounded-xl p-6 flex flex-col items-start space-y-4
+              className="bg-[#0C1226] border border-blue-600/40 rounded-xl p-6 flex flex-col items-center space-y-4
                          hover:border-blue-400 hover:shadow-lg hover:shadow-blue-500/20 transition-all duration-300 transform hover:-translate-y-2"
             >
-              <div className="w-12 h-12 flex items-center justify-center rounded-full text-3xl"
-                   style={{ background: `linear-gradient(135deg, #ff7e5f, #feb47b)` }}>
-                {feature.icon}
+              <div
+                className="w-12 h-12 flex items-center justify-center rounded-full"
+              >
+                {/* Conditionally render based on whether the icon is a URL string */}
+                {feature.icon.startsWith("http") && (
+                  <img
+                    src={feature.icon}
+                    alt={feature.title}
+                    className="w-full h-full object-cover rounded-full"
+                  />
+                )}
               </div>
               <h3 className="text-xl font-semibold text-white">{feature.title}</h3>
             </motion.div>

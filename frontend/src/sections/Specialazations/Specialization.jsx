@@ -94,22 +94,51 @@ const specializations = [
 // ---- Component with New Animation ----
 const Specialization = () => {
   const [index, setIndex] = useState(0);
+  const [direction, setDirection] = useState(0);
 
   const prevIndex = (index - 1 + specializations.length) % specializations.length;
   const nextIndex = (index + 1) % specializations.length;
 
-  const goPrev = () => setIndex(prevIndex);
-  const goNext = () => setIndex(nextIndex);
+  const goPrev = () => {
+    setIndex(prevIndex);
+    setDirection(-1);
+  };
+  const goNext = () => {
+    setIndex(nextIndex);
+    setDirection(1);
+  };
+
+  const variants = {
+    enter: (direction) => ({
+      x: direction > 0 ? 300 : -300,
+      opacity: 0,
+      scale: 0.9,
+    }),
+    center: {
+      x: 0,
+      opacity: 1,
+      scale: 1,
+      zIndex: 1,
+    },
+    exit: (direction) => ({
+      x: direction < 0 ? 300 : -300,
+      opacity: 0,
+      scale: 0.9,
+      zIndex: 0,
+    }),
+  };
 
   const Card = ({ item, active, onClick }) => {
     const Icon = item.icon;
     return (
       <motion.div
         onClick={onClick}
-        initial={active ? { opacity: 0, y: 50 } : false}
-        animate={active ? { opacity: 1, y: 0 } : { opacity: 0.5, scale: 0.9 }}
-        exit={{ opacity: 0, y: -50 }}
-        transition={{ duration: 0.7, type: "spring", stiffness: 100 }}
+        variants={variants}
+        initial="enter"
+        animate="center"
+        exit="exit"
+        custom={direction}
+        transition={{ duration: 0.5, ease: "easeInOut" }}
         className={`cursor-pointer w-full max-w-sm sm:max-w-md md:w-80 lg:w-96 p-6 sm:p-8 rounded-2xl shadow-lg border text-center ${
           active ? "bg-white text-black border-white" : "bg-gray-700/50 text-white border-white/20"
         }`}
@@ -135,7 +164,7 @@ const Specialization = () => {
     <section className="py-12 sm:py-16 px-4 sm:px-6 lg:px-8 text-black">
       <div className="container mx-auto">
         <div className="max-w-5xl mx-auto mb-8 text-center sm:text-left">
-          <h2 className="text-2xl sm:text-3xl lg:text-5xl font-extrabold mb-4 text-white">
+          <h2 className="text-2xl sm:text-3xl lg:text-5xl font-serif font-extrabold mb-4 text-white">
             Our Specialization
           </h2>
           <p className="text-sm sm:text-base lg:text-lg font-light max-w-3xl text-white mx-auto sm:mx-0">
@@ -151,7 +180,9 @@ const Specialization = () => {
             <Card item={specializations[prevIndex]} active={false} onClick={goPrev} />
           </div>
           <AnimatePresence mode="wait">
-            <Card key={index} item={specializations[index]} active={true} />
+            <motion.div key={index} custom={direction}>
+              <Card item={specializations[index]} active={true} />
+            </motion.div>
           </AnimatePresence>
           <div className="hidden lg:block">
             <Card item={specializations[nextIndex]} active={false} onClick={goNext} />
