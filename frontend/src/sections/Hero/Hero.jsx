@@ -2,8 +2,7 @@ import React, { useState, useEffect } from "react";
 import { motion, useInView } from "framer-motion";
 import Button from "../../components/common/Button";
 
-
-// A custom hook to handle the counting animation logic
+// Counting Animation Hook
 const useCountAnimation = (targetValue, duration = 2000) => {
   const [count, setCount] = useState(0);
   const ref = React.useRef(null);
@@ -12,10 +11,9 @@ const useCountAnimation = (targetValue, duration = 2000) => {
   useEffect(() => {
     if (!isInView) return;
 
-    const start = 0;
     const end = parseInt(targetValue, 10);
     if (isNaN(end)) {
-      setCount(targetValue); // Set to string value directly
+      setCount(targetValue);
       return;
     }
 
@@ -29,7 +27,7 @@ const useCountAnimation = (targetValue, duration = 2000) => {
       if (progress < duration) {
         requestAnimationFrame(animateCount);
       } else {
-        setCount(end); // Ensure the final value is exactly the target
+        setCount(end);
       }
     };
 
@@ -39,7 +37,7 @@ const useCountAnimation = (targetValue, duration = 2000) => {
   return { count, ref };
 };
 
-// Stat Counter Component
+// Stat Counter
 const StatCounter = ({ targetValue }) => {
   const { count, ref } = useCountAnimation(targetValue);
   const isString = isNaN(parseInt(targetValue, 10));
@@ -47,7 +45,7 @@ const StatCounter = ({ targetValue }) => {
   return (
     <p
       ref={ref}
-      className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-extrabold text-[#24c8ff]"
+      className="text-sm sm:text-base md:text-lg lg:text-xl font-extrabold text-[#24c8ff]"
     >
       {isString ? targetValue : `${count}${targetValue.slice(-1)}`}
     </p>
@@ -58,8 +56,8 @@ const StatCounter = ({ targetValue }) => {
 const HeroStats = () => {
   const stats = [
     { title: "Successful Projects", value: "100+" },
-    { title: "Repeated Client", value: "80%" },
-    { title: "Years in industry", value: "9+" },
+    { title: "Repeated Clients", value: "80%" },
+    { title: "Years in Industry", value: "9+" },
   ];
 
   return (
@@ -68,9 +66,9 @@ const HeroStats = () => {
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.8 }}
       viewport={{ once: true }}
-      className="py-8 w-full max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 bg-[#0C1226]/90 border-4 border-[#24c8ff] rounded-xl shadow-lg"
+      className="py-4 w-full max-w-5xl mx-auto px-2 sm:px-6 lg:px-8 bg-[#0C1226]/90 border-2 sm:border-4 border-[#24c8ff] rounded-xl shadow-lg"
     >
-      <div className="grid grid-cols-3 gap-6 text-center">
+      <div className="flex flex-row justify-between items-center gap-2 sm:grid sm:grid-cols-3 text-center">
         {stats.map((stat, index) => (
           <motion.div
             key={index}
@@ -79,7 +77,7 @@ const HeroStats = () => {
             transition={{ delay: index * 0.2, duration: 0.6 }}
             viewport={{ once: true }}
           >
-            <h3 className="text-base sm:text-lg font-semibold text-white opacity-80 mb-1 sm:mb-2 ">
+            <h3 className="text-xs sm:text-sm md:text-base font-semibold text-white opacity-80 mb-1">
               {stat.title}
             </h3>
             <StatCounter targetValue={stat.value} />
@@ -90,19 +88,19 @@ const HeroStats = () => {
   );
 };
 
-// Laptop Illustration (Hero Image)
+// Laptop Illustration
 const LaptopIllustration = () => (
   <motion.div
     initial={{ opacity: 0, scale: 0.85 }}
-    whileInView={{ opacity: 1, scale: 1.25 }}
-    transition={{ duration: 2, ease: "easeOut" }}
+    whileInView={{ opacity: 1, scale: 1 }}
+    transition={{ duration: 1.5, ease: "easeOut" }}
     viewport={{ once: true }}
-    className="w-full h-72 sm:h-80 md:h-96 lg:h-[420px] flex items-center justify-center"
+    className="w-full flex justify-center items-center"
   >
     <img
       src="/tecorengHero.png"
       alt="Laptop Illustration"
-      className="w-full h-full object-contain max-w-[500px] sm:max-w-[600px] lg:max-w-[700px]"
+      className="w-full h-auto max-w-[280px] sm:max-w-[400px] md:max-w-[500px] lg:max-w-[600px]"
     />
   </motion.div>
 );
@@ -114,7 +112,7 @@ const Hero = ({ className }) => {
       className={`relative pt-10 text-white overflow-hidden min-h-[70vh] sm:min-h-[80vh] lg:min-h-screen flex flex-col justify-between px-4 sm:px-6 lg:px-8 ${className}`}
     >
       {/* Content + Illustration */}
-      <div className="flex flex-col md:flex-row items-center justify-between gap-8 md:gap-12 lg:gap-16 flex-grow z-10 pt-16 sm:pt-20 pb-10 sm:pb-16">
+      <div className="flex flex-col-reverse md:flex-row items-center justify-between gap-6 md:gap-12 lg:gap-16 flex-grow z-10 pt-12 sm:pt-16 pb-10 sm:pb-16">
         {/* Left Side (Text + Button) */}
         <motion.div
           initial={{ opacity: 0, x: -60 }}
@@ -141,11 +139,13 @@ const Hero = ({ className }) => {
             transition={{ delay: 0.3, duration: 0.7 }}
             viewport={{ once: true }}
           >
-            <Button text="GET STARTED" className=" bg-gradient-to-r from-orange-400 to-red-500 text-white font-bold py-2 rounded-lg hover:opacity-90 transition shadow-amber-600">Get Started</Button>
+           <Button className="bg-gradient-to-r from-orange-400 to-red-500 text-white font-bold py-1 px-4 sm:py-2 sm:px-6 rounded-lg hover:opacity-90 transition shadow-lg">
+  Get Started
+</Button>
           </motion.div>
         </motion.div>
 
-        {/* Right Side (Illustration Overlay - animated) */}
+        {/* Right Side Illustration */}
         <motion.div
           initial={{ opacity: 0, x: 60 }}
           whileInView={{ opacity: 1, x: 0 }}

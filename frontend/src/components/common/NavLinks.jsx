@@ -76,13 +76,11 @@ const NavLinks = ({ navItems }) => {
                 onClick={() => console.log('Hire Developers')}
                 transparentOutline 
                 className="
-                    
                     py-1
                     px-2 
                     !text-lg 
                     rounded-full
                     border-1
-
                     hover:bg-orange-400
                 "
             >
@@ -93,7 +91,7 @@ const NavLinks = ({ navItems }) => {
                 onClick={() => console.log('Get a Quote')}
                 className="
                     py-2 
-                    px-5 
+                    px-2
                     !text-lg 
                     rounded-full
                 "
