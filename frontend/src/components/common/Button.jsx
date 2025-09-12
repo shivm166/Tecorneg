@@ -1,34 +1,32 @@
 import React from 'react';
+import clsx from 'clsx';
 
-const Button = ({ text = 'Hire Now', onClick, className = '', variant = 'filled' }) => {
-  const baseClasses = `
-    py-3 px-8
-    rounded-full
-    font-bold
-    font-serif
-    text-lg
-    whitespace-nowrap
-    transition transform duration-200 ease-in-out
-    active:translate-y-0.5
-    active:shadow-inner
-  `;
-
-  const variantClasses =
-    variant === 'filled'
-      ? `text-white bg-gradient-to-r from-orange-300 via-orange-400 to-orange-500
-         hover:from-orange-600 hover:to-orange-500
-         
-         shadow-[0_6px_12px_rgba(0,0,0,0.25)]`
-      : `bg-transparent text-orange-500 border border-orange-500
-         hover:bg-orange-500 hover:text-white`;
-
+const Button = ({ children, onClick, className, transparentOutline }) => {
   return (
-    <button
-      type="button"
+    <button 
+      className={clsx(
+        "border-none p-0 cursor-pointer transition-transform duration-150 ease-in-out active:translate-y-[2px]",
+        // Apply rounded-full to the outer button if the className contains it.
+        className && className.includes('rounded-full') ? 'rounded-full' : 'rounded-[15px]',
+        // Conditional background and border logic
+        !transparentOutline && "bg-[#701d04]", 
+        transparentOutline && "border-2 border-white",
+      )} 
       onClick={onClick}
-      className={`${baseClasses} ${variantClasses} ${className}`}
     >
-      {text}
+      <span 
+        className={clsx(
+          "flex items-center justify-center py-[9px] px-[23px] text-white transform translate-y-[-4px] h-[58px] font-bold text-[29px] leading-[30px] uppercase",
+          // Apply rounded-full to the inner span if the className contains it.
+          className && className.includes('rounded-full') ? 'rounded-full' : 'rounded-[15px]',
+          // Conditional gradient and offset logic
+          !transparentOutline && "bg-gradient-to-r from-[#f47b55] to-[#ff3d00]",
+          transparentOutline && "!translate-y-0",
+          className
+        )}
+      >
+        {children}
+      </span>
     </button>
   );
 };

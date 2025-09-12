@@ -86,7 +86,7 @@ const WhyChooseUs = () => {
             empower your business.
           </p>
 
-          <Button text="GET IN TOUCH" className="w-maxbg-gradient-to-r from-orange-400 to-red-500 text-white font-bold py-2 rounded-lg hover:opacity-90 transition shadow-amber-600" />
+          <Button text="GET IN TOUCH" >GET IN TOUCH</Button>
         </motion.div>
 
         {/* Features Grid */}

@@ -5,7 +5,8 @@ import Button from '../../components/common/Button';
 
 // Import the react-flags-select component and its CSS
 import ReactFlagsSelect from 'react-flags-select';
-import 'react-flags-select/css/react-flags-select.css';
+// import 'react-flags-select/css/react-flags-select.css'; // Add this line to import the CSS
+
 
 // A simple MessageModal component
 const MessageModal = ({ message, onClose }) => {
@@ -180,14 +181,14 @@ export default function App() {
             />
             
             {/* Country code selector and phone number input */}
-            <div className="flex items-center space-x-2 border rounded-lg px-2">
+            <div className="flex items-center space-x-2 w-full border-b px-2 py-2 focus-within:border-orange-400">
               <ReactFlagsSelect
                 selected={selectedCountry}
                 onSelect={(code) => setSelectedCountry(code)}
-                searchable
-                className="w-auto h-auto flex-shrink-0"
-                // Custom styles to integrate with Tailwind
-                customLabels={{ 'IN': { primary: 'India', secondary: '+91' } }}
+                showSelectedLabel={false}
+                showSecondarySelectedLabel={false}
+                showOptionLabel={false} // Hide option labels in the dropdown
+                className="flags-select-custom"
               />
               <input
                 type="tel"
@@ -196,7 +197,7 @@ export default function App() {
                 value={formData.phone}
                 onChange={handleChange}
                 required
-                className="flex-1 outline-none py-2 focus:outline-none focus:ring-0 placeholder:text-gray-500"
+                className="flex-1 outline-none focus:ring-0 placeholder:text-gray-500"
               />
             </div>
 
@@ -259,7 +260,17 @@ export default function App() {
               </div>
             </div>
             
-            <Button text='SUBMIT' className='rounded-xl w-full'/>
+            <Button 
+                className="
+                    py-2 
+                    px-5 
+                    text-lg 
+                    rounded-4xl
+                    w-full
+                "
+            >
+                Submit
+            </Button>
           </form>
         </div>
       </div>

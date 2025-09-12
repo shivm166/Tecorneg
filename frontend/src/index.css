@@ -21,3 +21,24 @@
   -webkit-text-stroke-color: #ffffff; /* outline color */
 }
 
+/* Add this to your main CSS file */
+
+.custom-card-shadow {
+  box-shadow: rgba(255, 255, 255, 0.5) 0px 39px 56px -36px inset,
+              rgb(255, 255, 255) 0px 7px 11px -4px inset,
+              rgba(14, 78, 114, 0.3) 0px -82px 68px -64px inset,
+              rgba(0, 161, 253, 0.3) 0px 98px 100px -48px inset,
+              rgba(8, 59, 88, 0.3) 0px 4px 18px inset,
+              rgba(13, 137, 207, 0.2) 0px 1px 40px inset;
+  backdrop-filter: blur(12.5px);
+}
+
+.flexible-card-h3-bg {
+    background: linear-gradient(rgba(255, 255, 255, 0.58) 0%, rgba(1, 19, 46, 0) 100%), 
+                linear-gradient(91.17deg, rgb(255, 255, 255) -93.64%, rgb(129, 179, 255) 98.85%);
+    border-radius: 17px;
+}
+.custom-card-bg {
+    background: rgba(255, 255, 255, 0.01);
+}
+

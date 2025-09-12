@@ -9,7 +9,6 @@ const NavLinks = ({ navItems }) => {
     const [openDropdownId, setOpenDropdownId] = useState(null);
     const dropdownRef = useRef(null);
 
-    // Effect to close the dropdown if a user clicks outside of it
     useEffect(() => {
         const handleClickOutside = (event) => {
             if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
@@ -62,7 +61,6 @@ const NavLinks = ({ navItems }) => {
                                             key={subIndex}
                                             href={subItem.href}
                                             className="block px-6 py-3 text-base text-white hover:bg-gray-600 transition-colors"
-                                            // The fix is here: we close the dropdown on click.
                                             onClick={() => setOpenDropdownId(null)}
                                         >
                                             {subItem.name}
@@ -74,8 +72,33 @@ const NavLinks = ({ navItems }) => {
                     ))}
                 </div>
             </nav>
-            <Button text="Hire Developers" className='text-white border-white'  variant="transparent"/>
-            <Button text="Get a quote" onClick={() => console.log('Get a Quote')} />
+            <Button 
+                onClick={() => console.log('Hire Developers')}
+                transparentOutline 
+                className="
+                    py-2 
+                    px-3 
+                    !text-lg 
+                    rounded-full
+                    border-1
+
+                    hover:bg-orange-400
+                "
+            >
+                Hire Developers
+            </Button>
+            
+            <Button 
+                onClick={() => console.log('Get a Quote')}
+                className="
+                    py-2 
+                    px-5 
+                    !text-lg 
+                    rounded-full
+                "
+            >
+                Get a Quote
+            </Button>
         </div>
     );
 };

@@ -121,10 +121,34 @@ const MobileMenu = ({ onClose, navItems }) => {
 
             <div className="flex flex-col space-y-4 mt-8 w-full items-center">
                 <motion.div variants={itemVariants} className="w-full text-center">
-                    <Button text="Hire Developers" className='text-white border-white' variant="transparent"  />
+                    <Button 
+                        onClick={() => console.log('Hire Developers')}
+                        transparentOutline
+                        className="
+                            !py-2 
+                            !px-5 
+                            !text-lg 
+                            rounded-full
+                            !border-white
+                            !border
+                            !hover:bg-orange-400
+                        "
+                    >
+                        Hire Developers
+                    </Button>
                 </motion.div>
                 <motion.div variants={itemVariants} className="w-full text-center">
-                    <Button text="Get a quote" onClick={onClose} />
+                    <Button 
+                        onClick={() => console.log('Get Started')} 
+                        className="
+                            !py-2 
+                            !px-5 
+                            !text-lg 
+                            rounded-full
+                        "
+                    >
+                        Get Started
+                    </Button>
                 </motion.div>
             </div>
         </motion.div>

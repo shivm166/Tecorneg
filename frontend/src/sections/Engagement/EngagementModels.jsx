@@ -1,4 +1,5 @@
 import React from 'react';
+import './styles.css'; // Import the new CSS file
 
 // Define the data for the cards as an array of objects
 const engagementModelsData = [
@@ -34,24 +35,27 @@ const EngagementModels = () => {
           {engagementModelsData.map((card, index) => (
             <div
               key={index}
-              className="group relative rounded-xl shadow-lg border border-gray-300 overflow-hidden
+              className="group relative rounded-[17px] shadow-lg border border-gray-300 overflow-hidden
                          transition-all duration-500"
             >
-              {/* Animated background layer (top → bottom) */}
-              <div className="absolute inset-0 bg-white -translate-y-full group-hover:translate-y-0 transition-transform duration-500 ease-in-out"></div>
-
               {/* Content wrapper with relative positioning and z-index to stay on top */}
               <div className="relative z-10">
                 {/* Full-width title section with its own background and padding */}
-                <div className="bg-white text-black py-12 text-center">
-                  <h2 className="text-2xl font-semibold">
+                <div className="relative flex justify-center items-center h-[115px] p-5 rounded-[17px]
+                                transition-all duration-500 overflow-hidden">
+                  {/* Background element for the gradient effect */}
+                  <div className="absolute inset-0 flexible-card-h3-bg transition-all duration-500"></div>
+                  <h3 className="relative z-10 text-xl font-bold text-[#151515] text-center
+                                 transition-colors duration-500
+                                 group-hover:text-white">
                     <span>{card.title}</span>
-                  </h2>
+                  </h3>
                 </div>
-                
+
                 {/* Description section with its own padding and hover color */}
                 <div className="p-8">
-                  <p className="text-base leading-relaxed text-white group-hover:text-black transition-colors duration-500">
+                  <p className="text-base leading-relaxed text-white transition-colors duration-500
+                                group-hover:text-black">
                     {card.description}
                   </p>
                 </div>

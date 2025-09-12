@@ -1,4 +1,3 @@
-// Specialization.jsx
 import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 
@@ -107,12 +106,12 @@ const Specialization = () => {
     return (
       <motion.div
         onClick={onClick}
-        initial={{ scale: 0.95, opacity: 0, rotate: active ? 0 : 10 }}
-        animate={{ scale: active ? 1 : 0.95, opacity: 1, rotate: 0 }}
-        exit={{ scale: 0.9, opacity: 0, rotate: -10 }}
-        transition={{ duration: 0.6 }}
+        initial={active ? { opacity: 0, y: 50 } : false}
+        animate={active ? { opacity: 1, y: 0 } : { opacity: 0.5, scale: 0.9 }}
+        exit={{ opacity: 0, y: -50 }}
+        transition={{ duration: 0.7, type: "spring", stiffness: 100 }}
         className={`cursor-pointer w-full max-w-sm sm:max-w-md md:w-80 lg:w-96 p-6 sm:p-8 rounded-2xl shadow-lg border text-center ${
-          active ? "bg-white" : "bg-gray-500"
+          active ? "bg-white text-black border-white" : "bg-gray-700/50 text-white border-white/20"
         }`}
       >
         <div className="w-14 h-14 sm:w-16 sm:h-16 flex items-center justify-center mx-auto mb-4 text-black">
@@ -123,7 +122,7 @@ const Specialization = () => {
         </h3>
         <p
           className={`text-sm sm:text-base ${
-            active ? "font-bold text-black" : "text-gray-900"
+            active ? "font-bold text-black" : "text-gray-300"
           }`}
         >
           {item.description}
@@ -134,43 +133,45 @@ const Specialization = () => {
 
   return (
     <section className="py-12 sm:py-16 px-4 sm:px-6 lg:px-8 text-black">
-      <div className="max-w-5xl mx-auto mb-8 text-center sm:text-left">
-        <h2 className="text-2xl sm:text-3xl lg:text-5xl font-extrabold mb-4 text-white">
-          Our Specialization
-        </h2>
-        <p className="text-sm sm:text-base lg:text-lg font-light max-w-3xl text-white mx-auto sm:mx-0">
-          We offer a full range of web app development services that make things
-          better for enterprises and companies we work with. Our team of
-          dedicated mobile app developers fulfils your diverse business
-          requirements through a number of services. We specialize in
-          the following services:
-        </p>
-      </div>
-      <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
-        <div className="hidden lg:block">
-          <Card item={specializations[prevIndex]} active={false} onClick={goPrev} />
+      <div className="container mx-auto">
+        <div className="max-w-5xl mx-auto mb-8 text-center sm:text-left">
+          <h2 className="text-2xl sm:text-3xl lg:text-5xl font-extrabold mb-4 text-white">
+            Our Specialization
+          </h2>
+          <p className="text-sm sm:text-base lg:text-lg font-light max-w-3xl text-white mx-auto sm:mx-0">
+            We offer a full range of web app development services that make things
+            better for enterprises and companies we work with. Our team of
+            dedicated mobile app developers fulfils your diverse business
+            requirements through a number of services. We specialize in
+            the following services:
+          </p>
         </div>
-        <AnimatePresence mode="wait">
-          <Card key={index} item={specializations[index]} active={true} />
-        </AnimatePresence>
-        <div className="hidden lg:block">
-          <Card item={specializations[nextIndex]} active={false} onClick={goNext} />
+        <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
+          <div className="hidden lg:block">
+            <Card item={specializations[prevIndex]} active={false} onClick={goPrev} />
+          </div>
+          <AnimatePresence mode="wait">
+            <Card key={index} item={specializations[index]} active={true} />
+          </AnimatePresence>
+          <div className="hidden lg:block">
+            <Card item={specializations[nextIndex]} active={false} onClick={goNext} />
+          </div>
         </div>
-      </div>
-      {/* Mobile and Tablet navigation buttons */}
-      <div className="mt-8 flex justify-center gap-4 lg:hidden">
-        <button
-          onClick={goPrev}
-          className="bg-gray-700 text-white p-2 rounded-full w-10 h-10 flex items-center justify-center"
-        >
-          &lt;
-        </button>
-        <button
-          onClick={goNext}
-          className="bg-gray-700 text-white p-2 rounded-full w-10 h-10 flex items-center justify-center"
-        >
-          &gt;
-        </button>
+        {/* Mobile and Tablet navigation buttons */}
+        <div className="mt-8 flex justify-center gap-4 lg:hidden">
+          <button
+            onClick={goPrev}
+            className="bg-gray-700 text-white p-2 rounded-full w-10 h-10 flex items-center justify-center"
+          >
+            &lt;
+          </button>
+          <button
+            onClick={goNext}
+            className="bg-gray-700 text-white p-2 rounded-full w-10 h-10 flex items-center justify-center"
+          >
+            &gt;
+          </button>
+        </div>
       </div>
     </section>
   );

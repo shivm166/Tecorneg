@@ -71,7 +71,7 @@ const Appricient = () => {
     if (sliderRef.current) {
       const card = sliderRef.current.querySelector('.card');
       if (!card) return;
-      
+
       const cardWidth = card.offsetWidth;
       const cardMargin = 16;
       const moveDistance = cardWidth + cardMargin * 2;
@@ -87,7 +87,7 @@ const Appricient = () => {
   }, [currentIndex, controls, width]);
 
   return (
-    <div className=" text-white py-12 px-6">
+    <div className="text-white py-12 px-6">
       <h2 className="text-4xl font-bold mb-8 font-sans text-gray-200 text-center">Appreciation from Clients</h2>
       <div className="relative overflow-hidden w-full max-w-5xl mx-auto">
         <motion.div
@@ -98,17 +98,19 @@ const Appricient = () => {
           {testimonials.map((testimonial, index) => (
             <div
               key={index}
-              className={`card flex-shrink-0 w-full sm:w-[calc(100%/2-2rem)] lg:w-[calc(100%/3-2rem)]
-                         h-[350px] p-6 rounded-xl shadow-lg
-                         bg-gradient-to-br from-[#423992d5] to-[#100a3f]
-                         border  border-opacity-30
-                         relative group transition-transform duration-300 transform
-                         hover:scale-[1.03] hover:shadow-[0_0_10px_#66fcf1]`}
+              className={`
+                card flex-shrink-0 w-full sm:w-[calc(100%/2-2rem)] lg:w-[calc(100%/3-2rem)]
+                h-[350px] p-6 rounded-[25px]
+                custom-card-bg custom-card-shadow
+                border border-opacity-30
+                relative group transition-transform duration-300 transform
+                hover:scale-[1.03] hover:shadow-[0_0_10px_#66fcf1]
+              `}
             >
-              <div className="absolute inset-0 rounded-xl border border-transparent transition-all
-                           group-hover:border-white group-hover:border-opacity-10
-                           group-hover:shadow-[inset_0_0_15px_#66fcf1]
-                           group-hover:bg-opacity-5"></div>
+              <div className="absolute inset-0 rounded-[25px] border border-transparent transition-all
+                group-hover:border-white group-hover:border-opacity-10
+                group-hover:shadow-[inset_0_0_15px_#66fcf1]
+                group-hover:bg-opacity-5"></div>
               <h3 className="text-lg font-extrabold text-white mb-1">{testimonial.name}</h3>
               <p className="text-white text-sm font-bold mb-4">{testimonial.company}</p>
               <p className="text-white whitespace-normal text-sm">{testimonial.text}</p>
@@ -121,7 +123,7 @@ const Appricient = () => {
           <div
             key={index}
             className={`w-3 h-3 rounded-full transition-all duration-300 cursor-pointer
-                        ${currentIndex === index ? 'bg-[#66fcf1]' : 'bg-gray-600'}`}
+              ${currentIndex === index ? 'bg-[#66fcf1]' : 'bg-gray-600'}`}
             onClick={() => setCurrentIndex(index)}
           ></div>
         ))}
