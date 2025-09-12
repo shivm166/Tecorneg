@@ -20,12 +20,12 @@ const navItems = [
     { name: 'Portfolio', href: '/portfolio' },
     { name: 'Blog', href: '/blog' },
 ];
-
+// bg-[#010927]
 const Header = () => {
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
     return (
-        <header className="bg-[#010927] text-white">
+        <header className=" text-white ">
             <div className="flex items-center justify-between py-6 px-10 border-b border-white border-opacity-20">
                 <a href="/">
                     <img src="/logo.svg" alt="Technical Core Engineers Logo" className="h-12" />

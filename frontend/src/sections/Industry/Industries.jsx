@@ -1,60 +1,52 @@
 import React from 'react';
-// To use local images in a React project, you can place them in the 'public' folder
-// and then reference them from the root. For example, if you place your images
-// in 'public/images/', the path would be './images/your-image-name.jpg'.
-// Alternatively, you can import images directly if they are within your 'src' folder.
 
-const industryData = [
-  {
-    title: 'Supply chain & Logistics',
-    image: '/logo.svg',
-  },
-  {
-    title: 'Healthcare',
-    image: './images/Healthcare.jpg',
-  },
-  {
-    title: 'Education',
-    image: './images/education.jpg',
-  },
-  {
-    title: 'Banking',
-    image: './images/banking.jpg',
-  },
-  {
-    title: 'E-commerce',
-    image: './images/e-commerce.jpg',
-  },
-  {
-    title: 'Travel',
-    image: './images/travel.jpg',
-  },
-];
-
+// This is the main App component that renders the industries grid.
 const Industries = () => {
+  // Array of industry data with placeholder images.
+  // Replace these image URLs with paths to your own images in the public folder,
+  // e.g., '/path/to/your/image.jpg'
+  const industries = [
+    { title: 'Supply chain & Logistics', imageUrl: '/images/supply.jpg' },
+    { title: 'Healthcare', imageUrl: 'https://images.unsplash.com/photo-1584515933487-779824d29309?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w1MDcwNTF8MHwxfHNlYXJjaHwxMHx8aGVhbHRoY2FyZXxlbnwwfHx8fDE3MDA0NTg1NjR8MA&ixlib=rb-4.0.3&q=80&w=1080' },
+    { title: 'Education', imageUrl: 'https://images.unsplash.com/photo-1497633762265-9d179a990aa6?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w1MDcwNTF8MHwxfHNlYXJjaHw3fHxlZHVjYXRpb258ZW58MHx8fHwxNzAwNDU4NTcxfDA&ixlib=rb-4.0.3&q=80&w=1080' },
+    { title: 'Banking', imageUrl: '/images/Banking.jpg' },
+    { title: 'E-commerce', imageUrl: 'https://images.unsplash.com/photo-1488590528505-98d2b5aba04b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w1MDcwNTF8MHwxfHNlYXJjaHwzfHxlY29tbWVyY2V8ZW58MHx8fHwxNzAwNDU4NjA0fDA&ixlib=rb-4.0.3&q=80&w=1080' },
+    { title: 'Travel', imageUrl: '/images/Travel.jpg' },
+  ];
+
   return (
-    <div className="min-h-screen bg-slate-900 text-white flex items-center justify-center p-8">
-      <div className="container mx-auto">
-        <h1 className="text-4xl sm:text-5xl font-bold mb-10 text-center sm:text-left">
+    <div className="min-h-screen  p-8">
+      {/* Title section */}
+      <div className="max-w-7xl mx-auto mb-10">
+        <h1 className="text-4xl md:text-5xl font-extrabold text-white text-center sm:text-left">
           Industries We are experts in
         </h1>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-          {industryData.map((item, index) => (
-            <div
-              key={index}
-              className="relative overflow-hidden rounded-xl h-64 shadow-lg transform transition-transform duration-300 hover:scale-105"
-            >
-              <img
-                src={item.image}
-                alt={item.title}
-                className="absolute inset-0 w-full h-full object-cover opacity-50"
-              />
-              <div className="absolute inset-0 bg-black bg-opacity-40 flex items-end p-6">
-                <h2 className="text-2xl font-semibold">{item.title}</h2>
-              </div>
+      </div>
+
+      {/* Grid of industry cards */}
+      <div className="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        {industries.map((industry, index) => (
+          // Card container with rounded corners, overflow hidden, and hover effect
+          <div
+            key={index}
+            className="relative h-40 rounded-xl overflow-hidden shadow-lg transition-transform duration-300 hover:scale-105"
+          >
+            {/* Background image */}
+            <img
+              src={industry.imageUrl}
+              alt={industry.title}
+              className="absolute inset-0 w-full h-full object-cover"
+            />
+            {/* Dark overlay for text readability */}
+            <div className="absolute inset-0 bg-neutral-950 opacity-40"></div>
+            {/* Title text overlay */}
+            <div className="absolute inset-0 flex items-end p-6">
+              <h2 className="text-xl font-bold text-center items-center text-white">
+                {industry.title}
+              </h2>
             </div>
-          ))}
-        </div>
+          </div>
+        ))}
       </div>
     </div>
   );

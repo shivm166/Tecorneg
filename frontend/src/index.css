@@ -1,4 +1,23 @@
 @import "tailwindcss";
-/* Remove this line: @import "tw-animate-css"; */
-/* src/index.css */
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+@import "slick-carousel/slick/slick.css";
+@import "slick-carousel/slick/slick-theme.css";
+
+
+@layer base {
+  /* Default font (applies everywhere) */
+  html {
+    font-family: Arial, Helvetica, ui-sans-serif, system-ui, sans-serif;
+  }
+
+  /* Optional override if you use font-serif class */
+  .font-serif {
+    font-family: "Playfair Display", ui-serif, Georgia, serif;
+  }
+}
+.outlined-text {
+  color: transparent; /* make the fill transparent */
+  -webkit-text-stroke-width: 1px; /* outline width */
+  -webkit-text-stroke-color: #ffffff; /* outline color */
+}
+

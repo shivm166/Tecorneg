@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { ChevronDownIcon, XMarkIcon } from '@heroicons/react/24/solid';
 import Button from './Button';
-import OutlinedButton from './OutlinedButton';
+
 
 const MobileMenu = ({ onClose, navItems }) => {
     const [openDropdownId, setOpenDropdownId] = useState(null);
@@ -121,7 +121,7 @@ const MobileMenu = ({ onClose, navItems }) => {
 
             <div className="flex flex-col space-y-4 mt-8 w-full items-center">
                 <motion.div variants={itemVariants} className="w-full text-center">
-                    <OutlinedButton text="Hire Developers" onClick={onClose} />
+                    <Button text="Hire Developers" className='text-white border-white' variant="transparent"  />
                 </motion.div>
                 <motion.div variants={itemVariants} className="w-full text-center">
                     <Button text="Get a quote" onClick={onClose} />

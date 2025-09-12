@@ -74,7 +74,7 @@ export default function DevelopmentProcess() {
   return (
     <div
       ref={containerRef}
-      className="text-white py-12 px-4 sm:px-6 md:px-10 lg:px-16 min-h-screen relative"
+      className="text-white bg-secondary py-12 px-4 sm:px-6 md:px-10 lg:px-16 min-h-screen relative"
     >
       <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-center mb-10 md:mb-16">
         Our Development Process

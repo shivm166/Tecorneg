@@ -117,7 +117,7 @@ const Service = () => {
     const [hovered, setHovered] = useState(null);
 
     return (
-        <div className="bg-[#071735] py-12 px-4 sm:px-6 lg:px-8 flex flex-col items-center text-white font-sans">
+        <div className=" py-12 px-4 sm:px-6 lg:px-8 flex flex-col items-center text-white font-sans">
             <div className="w-full max-w-7xl mx-auto">
                 <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4 tracking-tight text-left w-full">
                     Services We Offer

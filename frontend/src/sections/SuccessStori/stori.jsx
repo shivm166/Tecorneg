@@ -24,9 +24,9 @@ const SuccessStoryCard = ({ title, description, videoUrl }) => {
   };
 
   return (
-    // The card now has a fixed width and height
+    // The card now uses responsive widths with calc() for perfect spacing
     <div
-      className="bg-[#131b32] rounded-xl overflow-hidden shadow-xl w-[350px] h-[500px] flex flex-col"
+      className="bg-[#131b32] rounded-xl overflow-hidden shadow-xl w-full sm:w-[calc(50%-0.5rem)] md:w-[calc(33.333%-1rem)] flex flex-col"
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
     >
@@ -59,17 +59,17 @@ const SuccessStories = () => {
     {
       title: 'Betting Platform',
       description: 'Tecoverga’s Online Betting Platform revolutionizes how enthusiasts engage with betting, offering seamless experiences across sports, esports, casino games, and more.',
-      videoUrl: '/HelthandWellness.mp4'
+      videoUrl: '/BettingPlatform.mp4'
     },
     {
       title: 'Health and Wellness',
       description: 'Excitement fills the air as we proudly unveil our Health and Wellness Platform—a pivotal portal toward maximizing your health journey.',
-      videoUrl: '/E-Commerce.mp4'
+      videoUrl: '/HelthandWellness.mp4'
     },
     {
       title: 'An E-Commerce',
       description: 'Delve into the world of our custom-designed E-commerce Platform, a true testament to Tecoverga’s meticulous craftsmanship.',
-      videoUrl: '/BettingPlatform.mp4'
+      videoUrl: 'E-Commerce.mp4'
     }
   ];
 
@@ -79,7 +79,8 @@ const SuccessStories = () => {
         Our Success Stories
       </h2>
       
-      <div className="flex flex-col md:flex-row justify-between items-start md:items-start gap-8">
+      {/* The container now uses `items-stretch` to make all children the same height */}
+      <div className="flex flex-col md:flex-row justify-between items-start md:items-stretch gap-4 md:gap-8">
         {stories.map((story, index) => (
           <SuccessStoryCard
             key={index}

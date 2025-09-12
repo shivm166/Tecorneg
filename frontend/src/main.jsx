@@ -7,7 +7,7 @@ import Footer from "./sections/FooterSection/FooterSection.jsx"
 import Header from "./components/layout/Header.jsx"
 import Hero from './sections/Hero/Hero.jsx'
 import HireNow from './sections/HireNowSection/HireNow.jsx'
-import './styles/globals.css'
+
 
 createRoot(document.getElementById('root')).render(
     <BrowserRouter>

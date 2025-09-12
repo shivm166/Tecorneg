@@ -59,16 +59,15 @@ const Preview = () => {
               muted
               playsInline
             />
+            {/* The Fullscreen Button has been moved inside this div to be positioned relative to the video frame */}
+            <button 
+              onClick={handleFullscreen}
+              className="absolute bottom-4 right-4 sm:bottom-6 sm:right-6 lg:bottom-8 lg:right-8 w-12 h-12 md:w-16 md:h-16 lg:w-20 lg:h-20 bg-[#222b4d] rounded-full flex items-center justify-center cursor-pointer transform hover:scale-110 transition-transform duration-300 z-40"
+              aria-label="Toggle full screen"
+            >
+              <FaPlay className="text-white w-5 h-5 md:w-6 md:h-6 lg:w-7 lg:h-7" />
+            </button>
           </div>
-
-          {/* Fullscreen Button - now responsive */}
-          <button 
-            onClick={handleFullscreen}
-            className="absolute bottom-4 right-4 sm:bottom-6 sm:right-6 lg:bottom-8 lg:right-8 w-12 h-12 md:w-16 md:h-16 lg:w-20 lg:h-20 bg-[#222b4d] rounded-full flex items-center justify-center cursor-pointer transform hover:scale-110 transition-transform duration-300 z-40"
-            aria-label="Toggle full screen"
-          >
-            <FaPlay className="text-white w-5 h-5 md:w-6 md:h-6 lg:w-7 lg:h-7" />
-          </button>
         </div>
       </div>
     </>

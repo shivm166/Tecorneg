@@ -1,5 +1,5 @@
 import React from "react";
-import HireButton from "./components/HireButton";
+import Button from "../../components/common/Button";
 
 const HireNow = () => {
   return (
@@ -24,7 +24,7 @@ const HireNow = () => {
           </p>
 
           <div>
-            <HireButton>HIRE NOW</HireButton>
+            <Button text="HIRE NOW" className="bg-gradient-to-r from-orange-400 to-red-500 text-white font-bold py-2 rounded-lg hover:opacity-90 transition shadow-amber-600">HIRE NOW</Button>
           </div>
         </div>
 

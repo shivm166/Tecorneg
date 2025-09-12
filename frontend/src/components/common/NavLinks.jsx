@@ -3,7 +3,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { ChevronDownIcon } from '@heroicons/react/24/solid';
 import Button from '../common/Button';
-import OutlinedButton from '../common/OutlinedButton';
+
 
 const NavLinks = ({ navItems }) => {
     const [openDropdownId, setOpenDropdownId] = useState(null);
@@ -30,7 +30,7 @@ const NavLinks = ({ navItems }) => {
     return (
         <div className="hidden lg:flex items-center space-x-8 flex-shrink-0">
             <nav>
-                <div className="flex flex-row items-center space-x-8 text-white font-medium text-lg w-full">
+                <div className="flex flex-row items-center space-x-8 text-white font-medium text-lg w-full font-serif">
                     {navItems.map((item, index) => (
                         <div
                             key={index}
@@ -74,7 +74,7 @@ const NavLinks = ({ navItems }) => {
                     ))}
                 </div>
             </nav>
-            <OutlinedButton text="Hire Developers" onClick={() => console.log('Hire Devs')} />
+            <Button text="Hire Developers" className='text-white border-white'  variant="transparent"/>
             <Button text="Get a quote" onClick={() => console.log('Get a Quote')} />
         </div>
     );

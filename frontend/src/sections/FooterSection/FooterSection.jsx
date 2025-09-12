@@ -38,7 +38,7 @@ const FooterSection = () => {
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 pb-12">
                     {/* Features Menu */}
                     <div>
-                        <h4 className="text-xl font-semibold mb-6 underline decoration-dotted decoration-underline-offset-9">Features menu</h4>
+                        <h4 className="text-xl font-semibold mb-6 underline-offset-7 underline decoration-dotted">Features menu</h4>
                         <ul className="space-y-4">
                             {featureItems.map((item, index) => (
                                 <li key={index}>
@@ -52,7 +52,7 @@ const FooterSection = () => {
 
                     {/* Service Menu */}
                     <div>
-                        <h4 className="text-xl font-semibold mb-6 underline decoration-dotted decoration-underline-offset-9">Service Menu</h4>
+                        <h4 className="text-xl font-semibold mb-6 underline-offset-7 underline decoration-dotted">Service Menu</h4>
                         <ul className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-1 gap-4 lg:space-y-4 lg:gap-0">
                             {serviceItems.map((item, index) => (
                                 <li key={index}>
@@ -66,7 +66,7 @@ const FooterSection = () => {
                     
                     {/* Contact Information */}
                     <div className="md:col-span-2">
-                        <h4 className="text-xl font-semibold mb-6 underline decoration-dotted decoration-underline-offset-9">Contact Information</h4>
+                        <h4 className="text-xl font-semibold mb-6 underline-offset-7 underline decoration-dotted">Contact Information</h4>
                         <div className="space-y-6">
                             <div className="flex items-start space-x-4">
                                 <HiOutlineLocationMarker className="text-orange-500 text-2xl flex-shrink-0 mt-1" />
@@ -98,11 +98,12 @@ const FooterSection = () => {
 
                 {/* Footer Bottom */}
                 <div className="pt-8 border-t border-white border-opacity-20 flex flex-col md:flex-row items-center justify-between space-y-6 md:space-y-0">
-                    <div className="flex items-center space-x-4">
-                        <img src="/logo.svg" alt="Technical Core Engineers Logo" className="h-25" />
+                    {/* Logo hidden on mobile */}
+                    <div className="hidden md:flex items-center space-x-4">
+                        <img src="/logo.svg" alt="Technical Core Engineers Logo" className="h-10" />
                     </div>
 
-                    <p className="text-gray-400">Copyright © 2025 by Tecoreng</p>
+                    <p className="text-white">Copyright © 2025 by Tecoreng</p>
 
                     <div className="flex space-x-4 text-2xl">
                         <a href="#" aria-label="Facebook" className="hover:text-orange-500 transition-colors duration-200"><FaFacebookF /></a>
