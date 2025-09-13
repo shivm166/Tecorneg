@@ -3,7 +3,7 @@ import Button from "../../components/common/Button";
 
 const HireNow = () => {
   return (
-    <div className=" font-sans text-white py-12">
+    <div className="font-sans text-white py-12">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col-reverse lg:flex-row items-center justify-between gap-12">
         {/* Left Column: Text Content */}
         <div className="flex-1 text-center lg:text-left space-y-6">
@@ -24,58 +24,40 @@ const HireNow = () => {
           </p>
 
           <div>
-            <Button text="HIRE NOW" className="bg-gradient-to-r from-orange-400 to-red-500 text-white font-bold py-2 rounded-lg hover:opacity-90 transition shadow-amber-600">HIRE NOW</Button>
+            <Button
+              text="HIRE NOW"
+              className="bg-gradient-to-r from-orange-400 to-red-500 text-white font-bold py-2 rounded-lg hover:opacity-90 transition shadow-amber-600"
+            >
+              HIRE NOW
+            </Button>
           </div>
         </div>
 
-        {/* Right Column: Infinity Animation with 3D look */}
-        <div className="flex-1 flex justify-center items-center">
+        {/* Right Column: Larger Infinity Image with Animated Ball */}
+        <div className="flex-1 flex justify-center items-center relative">
+          {/* Infinity Image */}
+          <img
+            src="/infinite.jpg"
+            alt="Infinity"
+            className="w-96 h-96 sm:w-[28rem] sm:h-[28rem] lg:w-[36rem] lg:h-[36rem] object-contain"
+          />
+
+          {/* SVG Overlay for Ball Animation */}
           <svg
-            xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 400 200"
-            className="w-64 h-64 sm:w-80 sm:h-80 lg:w-96 lg:h-96"
+            className="absolute w-96 h-96 sm:w-[28rem] sm:h-[28rem] lg:w-[36rem] lg:h-[36rem] top-0 left-0"
           >
-            {/* Infinity Path */}
+            {/* Transparent Infinity Path */}
             <path
               id="infinityPath"
               d="M 50 100 C 50 50, 150 50, 200 100 S 350 150, 350 100 250 50, 200 100 50 150, 50 100"
               fill="none"
-              stroke="url(#metalGradient)"
+              stroke="transparent"
               strokeWidth="16"
-              strokeLinecap="round"
-              filter="url(#shadow)"
             />
 
-            {/* Gradient for metallic 3D effect */}
-            <defs>
-              <linearGradient id="metalGradient" x1="0" y1="0" x2="1" y2="1">
-                <stop offset="50%" stopColor="#d1d9ff" />
-                <stop offset="30%" stopColor="#6ec3f4" />
-                <stop offset="70%" stopColor="#9b5de5" />
-                <stop offset="100%" stopColor="#ff7eb3" />
-              </linearGradient>
-
-              {/* Shadow for depth */}
-              <filter id="shadow" x="-20%" y="-20%" width="150%" height="150%">
-                <feDropShadow
-                  dx="0"
-                  dy="2"
-                  stdDeviation="4"
-                  floodColor="#000"
-                  floodOpacity="0.5"
-                />
-              </filter>
-
-              {/* Glossy gradient for sphere */}
-              <radialGradient id="sphereGradient" cx="30%" cy="30%" r="70%">
-                <stop offset="0%" stopColor="white" stopOpacity="0.8" />
-                <stop offset="40%" stopColor="#6ec3f4" stopOpacity="0.9" />
-                <stop offset="100%" stopColor="#1e3a8a" stopOpacity="1" />
-              </radialGradient>
-            </defs>
-
-            {/* Moving Ball with 3D glossy look */}
-            <circle r="12" fill="url(#sphereGradient)" filter="url(#shadow)">
+            {/* Ball */}
+            <circle r="12" fill="#FFD700" filter="url(#shadow)">
               <animateMotion
                 dur="6s"
                 repeatCount="indefinite"
@@ -87,6 +69,11 @@ const HireNow = () => {
                 <mpath href="#infinityPath" />
               </animateMotion>
             </circle>
+
+            {/* Shadow filter */}
+            <filter id="shadow" x="-20%" y="-20%" width="150%" height="150%">
+              <feDropShadow dx="0" dy="2" stdDeviation="4" floodColor="#000" floodOpacity="0.5" />
+            </filter>
           </svg>
         </div>
       </div>
