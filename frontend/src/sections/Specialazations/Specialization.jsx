@@ -91,7 +91,7 @@ const specializations = [
   },
 ];
 
-// ---- Component with New Animation ----
+// ---- Component ----
 const Specialization = () => {
   const [index, setIndex] = useState(0);
   const [direction, setDirection] = useState(0);
@@ -139,19 +139,17 @@ const Specialization = () => {
         exit="exit"
         custom={direction}
         transition={{ duration: 0.5, ease: "easeInOut" }}
-        className={`cursor-pointer w-full max-w-sm sm:max-w-md md:w-80 lg:w-96 p-6 sm:p-8 rounded-2xl shadow-lg border text-center ${active ? "bg-white text-black border-white" : "bg-gray-700/50 text-white border-white/20"
-          }`}
+        className={`cursor-pointer rounded-2xl shadow-lg border text-center p-6 sm:p-8
+          ${active
+            ? "bg-white text-black border-white h-96 w-96 sm:w-96 md:w-96 lg:w-[28rem]" // Center card bigger
+            : "bg-white text-black border-white/20 w-72 sm:w-80 md:w-80 lg:w-80"} // Prev/Next cards
+        `}
       >
         <div className="w-14 h-14 sm:w-16 sm:h-16 flex items-center justify-center mx-auto mb-4 text-black">
           <Icon className="w-full h-full" />
         </div>
-        <h3 className="text-lg sm:text-xl lg:text-2xl font-semibold mb-3">
-          {item.title}
-        </h3>
-        <p
-          className={`text-sm sm:text-base ${active ? "font-bold text-black" : "text-gray-300"
-            }`}
-        >
+        <h3 className="text-lg sm:text-xl lg:text-2xl font-semibold mb-3">{item.title}</h3>
+        <p className={`text-sm sm:text-base ${active ? "font-bold text-black" : "text-gray-700"}`}>
           {item.description}
         </p>
       </motion.div>
