@@ -76,7 +76,7 @@ const WhyChooseUs = () => {
           variants={fadeInVariants}
           className="text-left mb-12"
         >
-          <h2 className="text-6xl sm:text-5xl lg:text-6xl font-extrabold mb-6 outlined-text">
+          <h2 className="text-2xl sm:text-4xl lg:text-5xl xl:text-6xl font-extrabold mb-6 outlined-text leading-snug">
             WHY TECORENG FOR YOUR NEXT <br /> PROJECT
           </h2>
           <p className="text-lg sm:text-xl font-light leading-relaxed mb-8 max-w-3xl font-serif">
