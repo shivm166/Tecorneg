@@ -1,7 +1,6 @@
 import React from 'react';
-import '../../index.css' // Ensure this file has the required CSS classes
+import '../../index.css';
 
-// Define the data for the cards as an array of objects
 const engagementModelsData = [
     {
         title: "Hire Full-time Developer",
@@ -22,7 +21,7 @@ const engagementModelsData = [
 
 const EngagementModels = () => {
     return (
-        <section className="py-16 px-4 sm:px-6 lg:px-8 ">
+        <section className="py-16 px-4 sm:px-6 lg:px-8">
             <div className="max-w-7xl mx-auto">
                 <h1 className="text-4xl sm:text-5xl font-bold mb-6 text-center lg:text-left text-white">
                     Our Flexible Engagement Models
@@ -35,30 +34,20 @@ const EngagementModels = () => {
                     {engagementModelsData.map((card, index) => (
                         <div
                             key={index}
-                            className="group relative rounded-[17px] shadow-lg border border-gray-300 overflow-hidden
-                         transition-all duration-500"
+                            className="relative group rounded-[17px] overflow-hidden border border-gray-300 shadow-lg"
                         >
-                            {/* Background element for the entire card on hover */}
-                            <div className="absolute inset-0 flexible-card-h3-bg transition-opacity duration-600 opacity-0 group-hover:opacity-100 z-0"></div>
+                            {/* Expanding background */}
+                            <div className="absolute top-0 left-0 w-full h-[115px] bg-[#c1d8fc] group-hover:h-full transition-all duration-700 ease-in-out z-0"></div>
 
-                            {/* Content wrapper with relative positioning and z-index to stay on top */}
+                            {/* Content */}
                             <div className="relative z-10">
-                                {/* Full-width title section with its own background and padding */}
-                                <div className="relative flex justify-center items-center h-[115px] p-5 rounded-[17px]
-                                transition-all duration-500 overflow-hidden">
-                                    {/* Background element for the gradient effect */}
-                                    <div className="absolute inset-0 flexible-card-h3-bg transition-all duration-500"></div>
-                                    <h3 className="relative z-10 text-xl font-bold text-[#151515] text-center
-                                 transition-colors duration-500
-                                 group-hover:text-black">
-                                        <span>{card.title}</span>
+                                <div className="flex justify-center items-center h-[115px] p-5">
+                                    <h3 className="text-xl font-bold text-[#151515] group-hover:text-[#151515]">
+                                        {card.title}
                                     </h3>
                                 </div>
-
-                                {/* Description section with its own padding and hover color */}
                                 <div className="p-8">
-                                    <p className="text-base font-bold leading-relaxed text-white transition-colors duration-500
-                                group-hover:text-black">
+                                    <p className="text-base font-bold leading-relaxed text-white group-hover:text-black transition-colors duration-500">
                                         {card.description}
                                     </p>
                                 </div>
