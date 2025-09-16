@@ -5,6 +5,7 @@ const HireNow = () => {
   return (
     <div className="font-sans text-white py-12">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col-reverse lg:flex-row items-center justify-between gap-12">
+
         {/* Left Column: Text Content */}
         <div className="flex-1 text-center lg:text-left space-y-6">
           <h1 className="text-2xl sm:text-4xl lg:text-5xl font-bold leading-snug">
@@ -33,7 +34,7 @@ const HireNow = () => {
           </div>
         </div>
 
-        {/* Right Column: Larger Infinity Image with Animated Ball */}
+        {/* Right Column: Infinity Image + Ball Animation */}
         <div className="flex-1 flex justify-center items-center relative">
           {/* Infinity Image */}
           <img
@@ -47,33 +48,47 @@ const HireNow = () => {
             viewBox="0 0 400 200"
             className="absolute w-96 h-96 sm:w-[28rem] sm:h-[28rem] lg:w-[36rem] lg:h-[36rem] top-0 left-0"
           >
-            {/* Transparent Infinity Path */}
+            {/* Smooth Infinity Path */}
             <path
               id="infinityPath"
-              d="M 50 100 C 50 50, 150 50, 200 100 S 350 150, 350 100 250 50, 200 100 50 150, 50 100"
+              d="M 100 100 
+                 C 100 50, 200 50, 200 100 
+                 C 200 150, 300 150, 300 100 
+                 C 300 50, 200 50, 200 100 
+                 C 200 150, 100 150, 100 100"
               fill="none"
               stroke="transparent"
-              strokeWidth="16"
+              strokeWidth="8"
             />
 
-            {/* Ball */}
-            <circle r="12" fill="#FFD700" filter="url(#shadow)">
-              <animateMotion
-                dur="6s"
-                repeatCount="indefinite"
-                rotate="auto"
-                keyPoints="0;1"
-                keyTimes="0;1"
-                calcMode="linear"
-              >
+            <defs>
+              {/* Multi-color Gradient for 3D Ball */}
+              <radialGradient id="ballGradient" cx="30%" cy="30%" r="70%">
+                <stop offset="0%" stopColor="#ffffff" />     {/* Highlight */}
+                <stop offset="25%" stopColor="#ffcc00" />    {/* Yellow */}
+                <stop offset="50%" stopColor="#ff0066" />    {/* Pink/Red */}
+                <stop offset="75%" stopColor="#6600ff" />    {/* Purple */}
+                <stop offset="100%" stopColor="#0033cc" />   {/* Blue Edge */}
+              </radialGradient>
+
+              {/* Shadow filter */}
+              <filter id="shadow" x="-20%" y="-20%" width="150%" height="150%">
+                <feDropShadow
+                  dx="0"
+                  dy="2"
+                  stdDeviation="4"
+                  floodColor="#000"
+                  floodOpacity="0.5"
+                />
+              </filter>
+            </defs>
+
+            {/* Ball with multi-color gradient */}
+            <circle r="12" fill="url(#ballGradient)" filter="url(#shadow)">
+              <animateMotion dur="6s" repeatCount="indefinite" rotate="auto">
                 <mpath href="#infinityPath" />
               </animateMotion>
             </circle>
-
-            {/* Shadow filter */}
-            <filter id="shadow" x="-20%" y="-20%" width="150%" height="150%">
-              <feDropShadow dx="0" dy="2" stdDeviation="4" floodColor="#000" floodOpacity="0.5" />
-            </filter>
           </svg>
         </div>
       </div>

@@ -41,7 +41,7 @@ const SuccessStoryCard = ({ title, description, videoUrl }) => {
           playsInline
         />
       </div>
-      
+
       {/* The text container takes up the remaining 35% of the card's height */}
       <div className="p-6 flex flex-col flex-grow h-[25%]">
         <h3 className="text-xl font-semibold mb-2">{title}</h3>
@@ -78,7 +78,7 @@ const SuccessStories = () => {
       <h2 className="text-3xl sm:text-4xl font-semibold mb-12">
         Our Success Stories
       </h2>
-      
+
       {/* The container now uses `items-stretch` to make all children the same height */}
       <div className="flex flex-col md:flex-row justify-between items-start md:items-stretch gap-4 md:gap-8">
         {stories.map((story, index) => (

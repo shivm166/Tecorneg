@@ -74,14 +74,14 @@ export default function App() {
   const handleCloseModal = () => {
     setModalMessage('');
   };
-  
+
   // Drag and drop handlers
   const handleDragEnter = (e) => {
     e.preventDefault();
     e.stopPropagation();
     setIsDragging(true);
   };
-  
+
   const handleDragOver = (e) => {
     e.preventDefault();
     e.stopPropagation();
@@ -179,7 +179,7 @@ export default function App() {
               required
               className="w-full border-b px-2 py-2 focus:outline-none focus:ring-0 focus:border-orange-400 placeholder:text-gray-500"
             />
-            
+
             {/* Country code selector and phone number input */}
             <div className="flex items-center space-x-2 w-full border-b px-2 py-2 focus-within:border-orange-400">
               <ReactFlagsSelect
@@ -247,7 +247,7 @@ export default function App() {
                 className="hidden"
               />
             </div>
-            
+
             {/* Recaptcha and Submit Button */}
             <div className="my-4 overflow-hidden flex justify-center">
               <div className="max-w-[304px] w-full">
@@ -259,9 +259,9 @@ export default function App() {
                 </div>
               </div>
             </div>
-            
-            <Button 
-                className="
+
+            <Button
+              className="
                     py-2 
                     px-5 
                     text-lg 
@@ -269,7 +269,7 @@ export default function App() {
                     w-full
                 "
             >
-                Submit
+              Submit
             </Button>
           </form>
         </div>

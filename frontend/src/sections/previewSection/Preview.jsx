@@ -47,7 +47,7 @@ const Preview = () => {
       {/* Preview Section */}
       <div className="w-full py-12">
         <div className="relative mx-auto max-w-7xl aspect-video rounded-3xl overflow-hidden bg-transparent">
-          
+
           {/* Central Video Player */}
           <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[95%] h-[95%] sm:w-[90%] sm:h-[90%] rounded-2xl shadow-2xl z-30 overflow-hidden">
             <video
@@ -60,7 +60,7 @@ const Preview = () => {
               playsInline
             />
             {/* The Fullscreen Button has been moved inside this div to be positioned relative to the video frame */}
-            <button 
+            <button
               onClick={handleFullscreen}
               className="absolute bottom-4 right-4 sm:bottom-6 sm:right-6 lg:bottom-8 lg:right-8 w-12 h-12 md:w-16 md:h-16 lg:w-20 lg:h-20 bg-[#222b4d] rounded-full flex items-center justify-center cursor-pointer transform hover:scale-110 transition-transform duration-300 z-40"
               aria-label="Toggle full screen"

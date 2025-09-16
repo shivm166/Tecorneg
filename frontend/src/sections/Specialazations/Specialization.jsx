@@ -139,9 +139,8 @@ const Specialization = () => {
         exit="exit"
         custom={direction}
         transition={{ duration: 0.5, ease: "easeInOut" }}
-        className={`cursor-pointer w-full max-w-sm sm:max-w-md md:w-80 lg:w-96 p-6 sm:p-8 rounded-2xl shadow-lg border text-center ${
-          active ? "bg-white text-black border-white" : "bg-gray-700/50 text-white border-white/20"
-        }`}
+        className={`cursor-pointer w-full max-w-sm sm:max-w-md md:w-80 lg:w-96 p-6 sm:p-8 rounded-2xl shadow-lg border text-center ${active ? "bg-white text-black border-white" : "bg-gray-700/50 text-white border-white/20"
+          }`}
       >
         <div className="w-14 h-14 sm:w-16 sm:h-16 flex items-center justify-center mx-auto mb-4 text-black">
           <Icon className="w-full h-full" />
@@ -150,9 +149,8 @@ const Specialization = () => {
           {item.title}
         </h3>
         <p
-          className={`text-sm sm:text-base ${
-            active ? "font-bold text-black" : "text-gray-300"
-          }`}
+          className={`text-sm sm:text-base ${active ? "font-bold text-black" : "text-gray-300"
+            }`}
         >
           {item.description}
         </p>

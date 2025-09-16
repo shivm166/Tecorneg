@@ -30,7 +30,7 @@ const FooterSection = () => {
         { name: 'Digital Marketing', href: '#' },
         { name: 'Cloud Computing', href: '#' },
     ];
-    
+
     return (
         <footer className="bg-[#0C1226] text-white py-16 px-4 sm:px-6 lg:px-8">
             <div className="max-w-7xl mx-auto">
@@ -63,7 +63,7 @@ const FooterSection = () => {
                             ))}
                         </ul>
                     </div>
-                    
+
                     {/* Contact Information */}
                     <div className="md:col-span-2">
                         <h4 className="text-xl font-semibold mb-6 underline-offset-7 underline decoration-dotted">Contact Information</h4>
