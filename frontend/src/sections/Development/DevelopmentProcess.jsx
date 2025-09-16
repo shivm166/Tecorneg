@@ -1,3 +1,5 @@
+// src/components/DevelopmentProcess.jsx (Revised)
+
 "use client";
 import { motion } from "framer-motion";
 
@@ -41,9 +43,12 @@ export default function DevelopmentProcess() {
 
   return (
     <div
-      className="text-white py-12 px-4 sm:px-6 md:px-10 lg:px-16 min-h-screen relative overflow-hidden"
+      className="text-white py-12 px-4 sm:px-6 md:px-10 lg:px-16 relative overflow-hidden"
       style={{ fontFamily: "Poppins, sans-serif" }}
     >
+      {/* KEY CHANGE: Removed `min-h-screen` from the class list.
+        The height will now be determined by the content itself, which is what you want.
+      */}
       <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-left mb-10 md:mb-16">
         Our Development Process
       </h2>

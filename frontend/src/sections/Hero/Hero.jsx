@@ -89,38 +89,53 @@ const HeroStats = () => {
   );
 };
 
-// --- Laptop Illustration ---
+// --- Laptop Illustration (REVISED) ---
 const LaptopIllustration = () => (
   <motion.div
     initial={{ opacity: 0, scale: 0.85 }}
     whileInView={{ opacity: 1, scale: 1 }}
     transition={{ duration: 2, ease: "easeOut" }}
     viewport={{ once: true }}
-    className="w-full h-72 sm:h-80 md:h-96 lg:h-[420px] flex items-center justify-center overflow-hidden"
+    // Removed fixed heights to allow the container to be flexible
+    className="w-full flex items-center justify-center overflow-hidden"
   >
     <img
       src="/tecorengHero.png"
       alt="Laptop Illustration"
-      className="w-full h-full object-contain max-w-full sm:max-w-[600px] lg:max-w-[700px]"
+      // KEY CHANGE: h-auto makes the height scale proportionally with the width
+      className="w-full h-auto object-contain max-w-full sm:max-w-[400px] md:max-w-[500px] lg:max-w-[700px]"
     />
   </motion.div>
 );
 
-// --- Hero Section ---
+// --- Hero Section (REVISED) ---
 const Hero = ({ className }) => {
   return (
     <section
-      className={`relative pt-10 text-white overflow-hidden min-h-[70vh] sm:min-h-[80vh] lg:min-h-screen flex flex-col justify-between px-4 sm:px-6 lg:px-8 ${className}`}
+      className={`relative pt-10 text-white overflow-hidden flex flex-col justify-center px-4 sm:px-6 lg:px-8 ${className}`}
     >
+      {/* KEY CHANGE:
+        - Removed `min-h-[70vh] sm:min-h-[80vh] lg:min-h-screen`
+        - This prevents the section from having a massive, fixed height that doesn't
+          scale with extreme browser minimization. The height will now be determined by the content.
+        - Changed `justify-between` to `justify-center` to better vertically align content.
+      */}
+
       {/* Content + Illustration */}
-      <div className="flex flex-col md:flex-row items-center justify-between gap-8 md:gap-12 lg:gap-16 flex-grow z-10 pt-16 sm:pt-20 pb-10 sm:pb-16">
+      <div className="flex flex-col md:flex-row items-center justify-center gap-8 md:gap-12 lg:gap-16 flex-grow z-10 pt-16 sm:pt-20 pb-10 sm:pb-16">
+        {/*
+          KEY CHANGE:
+          - Changed `justify-between` to `justify-center` to keep content centered
+            on both mobile and desktop views, which handles the 25% zoom more gracefully.
+        */}
+
         {/* Left Side (Text + Button) */}
         <motion.div
           initial={{ opacity: 0, x: -60 }}
           whileInView={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
-          className="flex flex-col items-start text-left w-full md:w-1/2"
+          className="flex flex-col items-start text-left w-full md:w-1/2 mb-10 md:mb-0"
         >
           <motion.h1
             initial={{ opacity: 0, y: -40 }}
@@ -153,7 +168,7 @@ const Hero = ({ className }) => {
           whileInView={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
-          className="w-full md:w-1/2 flex justify-center overflow-hidden"
+          className="w-full md:w-1/2 flex justify-center"
         >
           <LaptopIllustration />
         </motion.div>
