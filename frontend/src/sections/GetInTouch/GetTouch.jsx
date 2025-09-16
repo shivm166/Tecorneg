@@ -1,9 +1,9 @@
+// src/components/App.jsx (Revised)
+
 import React, { useState } from 'react';
 import { FaEnvelope, FaPhone, FaTwitter, FaFacebookF, FaLinkedinIn, FaYoutube } from "react-icons/fa";
 import ReCAPTCHA from "react-google-recaptcha";
 import Button from '../../components/common/Button';
-
-// Import the react-flags-select component and its CSS
 import ReactFlagsSelect from 'react-flags-select';
 // import 'react-flags-select/css/react-flags-select.css'; // Add this line to import the CSS
 
@@ -109,7 +109,11 @@ export default function App() {
   };
 
   return (
-    <div className="min-h-screen text-white flex items-start justify-center p-4 sm:p-6 lg:p-12 bg-[#010925] rounded-xl">
+    <div className="text-white flex items-center justify-center p-4 sm:p-6 lg:p-12 bg-[#010925] rounded-xl">
+      {/* KEY CHANGE: Removed `min-h-screen` and `items-start`
+        - The container height will now be determined by the content.
+        - `items-center` ensures the content is vertically centered for better aesthetics.
+      */}
       <div className="max-w-6xl w-full grid grid-cols-1 md:grid-cols-2 gap-10 lg:gap-16">
 
         <div className="flex flex-col justify-between h-full py-8 px-6 rounded-lg">
@@ -222,7 +226,7 @@ export default function App() {
             {/* Drag and Drop File Input */}
             <div
               className={`w-full border-2 border-dashed rounded-lg p-6 text-center transition-colors cursor-pointer
-                ${isDragging ? 'border-orange-500 bg-gray-100' : 'border-gray-300'}`}
+                ${isDragging ? 'border-orange-500 bg-gray-100' : 'border-gray-300'}`}
               onDragEnter={handleDragEnter}
               onDragOver={handleDragOver}
               onDragLeave={handleDragLeave}
@@ -262,12 +266,12 @@ export default function App() {
 
             <Button
               className="
-                    py-2 
-                    px-5 
-                    text-lg 
-                    rounded-4xl
-                    w-full
-                "
+                    py-2 
+                    px-5 
+                    text-lg 
+                    rounded-4xl
+                    w-full
+                "
             >
               Submit
             </Button>
