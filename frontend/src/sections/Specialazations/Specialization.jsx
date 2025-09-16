@@ -141,7 +141,7 @@ const Specialization = () => {
         transition={{ duration: 0.5, ease: "easeInOut" }}
         className={`cursor-pointer rounded-2xl shadow-lg border text-center p-6 sm:p-8
           ${active
-            ? "bg-white text-black border-white h-96 w-96 sm:w-96 md:w-96 lg:w-[28rem]" // Center card bigger
+            ? "bg-white text-black border-white h-96 w-96 sm:w-96 md:w-96 lg:w-[28rem] sm:h-96 md:h-96 lg:h-[28rem]" // Center card bigger
             : "bg-white text-black border-white/20 w-72 sm:w-80 md:w-80 lg:w-80"} // Prev/Next cards
         `}
       >
