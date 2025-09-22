@@ -119,7 +119,7 @@ const Service = () => {
     return (
         <div className=" py-12 px-4 sm:px-6 lg:px-8 flex flex-col items-center text-white font-sans">
             <div className="w-full max-w-7xl mx-auto">
-                <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4 tracking-tight text-left w-full">
+                <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4 tracking-tight text-left w-full font-poppins">
                     Services We Offer
                 </h2>
                 <p className="text-white font-light leading-relaxed mb-4 tracking-tight text-left w-full max-w-2xl">

@@ -103,7 +103,7 @@ const LaptopIllustration = () => (
       src="/tecorengHero.png"
       alt="Laptop Illustration"
       // KEY CHANGE: h-auto makes the height scale proportionally with the width
-      className="w-full h-auto object-contain max-w-full sm:max-w-[400px] md:max-w-[500px] lg:max-w-[700px]"
+      className="w-full h-auto object-contain max-w-full sm:max-w-[600px] md:max-w-[800px] lg:max-w-[1000px]"
     />
   </motion.div>
 );
@@ -135,7 +135,7 @@ const Hero = ({ className }) => {
           whileInView={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
-          className="flex flex-col items-start text-left w-full md:w-1/2 mb-10 md:mb-0"
+          className="flex flex-col items-start text-left w-full md:w-auto mb-10 md:mb-0"
         >
           <motion.h1
             initial={{ opacity: 0, y: -40 }}
@@ -168,7 +168,7 @@ const Hero = ({ className }) => {
           whileInView={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
-          className="w-full md:w-1/2 flex justify-center"
+          className="w-full md:w-auto flex justify-center"
         >
           <LaptopIllustration />
         </motion.div>

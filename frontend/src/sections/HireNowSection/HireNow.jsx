@@ -8,7 +8,7 @@ const HireNow = () => {
 
         {/* Left Column: Text Content */}
         <div className="flex-1 text-center lg:text-left space-y-6">
-          <h1 className="text-2xl sm:text-4xl lg:text-5xl font-bold leading-snug">
+          <h1 className="text-2xl sm:text-4xl lg:text-5xl font-bold leading-snug font-poppins">
             Transfer your <br />
             enterprise with digital <br />
             innovation

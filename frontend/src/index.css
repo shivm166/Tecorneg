@@ -7,7 +7,7 @@
 @layer base {
   /* Default font (applies everywhere) */
   html {
-    font-family: Arial, Helvetica, ui-sans-serif, system-ui, sans-serif;
+    font-family: ui-serif, Georgia, serif;
   }
 
   /* Optional override if you use font-serif class */
@@ -41,4 +41,3 @@
 .custom-card-bg {
     background: rgba(255, 255, 255, 0.01);
 }
-

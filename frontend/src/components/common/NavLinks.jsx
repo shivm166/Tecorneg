@@ -72,22 +72,22 @@ const NavLinks = ({ navItems }) => {
                     ))}
                 </div>
             </nav>
-            <Button 
+            <Button
                 onClick={() => console.log('Hire Developers')}
-                transparentOutline 
+                transparentOutline
                 className="
                     py-1
                     px-2 
                     !text-lg 
                     rounded-full
                     border-1
-                    hover:bg-orange-400
+                    hover:bg-orange-500
                 "
             >
                 Hire Developers
             </Button>
-            
-            <Button 
+
+            <Button
                 onClick={() => console.log('Get a Quote')}
                 className="
                     py-2 

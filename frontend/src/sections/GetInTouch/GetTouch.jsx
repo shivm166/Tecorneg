@@ -1,12 +1,18 @@
 // src/components/App.jsx (Revised)
 
-import React, { useState } from 'react';
-import { FaEnvelope, FaPhone, FaTwitter, FaFacebookF, FaLinkedinIn, FaYoutube } from "react-icons/fa";
+import React, { useState } from "react";
+import {
+  FaEnvelope,
+  FaPhone,
+  FaTwitter,
+  FaFacebookF,
+  FaLinkedinIn,
+  FaYoutube,
+} from "react-icons/fa";
 import ReCAPTCHA from "react-google-recaptcha";
-import Button from '../../components/common/Button';
-import ReactFlagsSelect from 'react-flags-select';
+import Button from "../../components/common/Button";
+import ReactFlagsSelect from "react-flags-select";
 // import 'react-flags-select/css/react-flags-select.css'; // Add this line to import the CSS
-
 
 // A simple MessageModal component
 const MessageModal = ({ message, onClose }) => {
@@ -29,22 +35,22 @@ const MessageModal = ({ message, onClose }) => {
 
 export default function App() {
   const [formData, setFormData] = useState({
-    fullName: '',
-    phone: '',
-    email: '',
-    message: '',
+    fullName: "",
+    phone: "",
+    email: "",
+    message: "",
     file: null,
   });
   const [captchaVerified, setCaptchaVerified] = useState(false);
-  const [modalMessage, setModalMessage] = useState('');
+  const [modalMessage, setModalMessage] = useState("");
   const [isDragging, setIsDragging] = useState(false); // New state for drag-and-drop
-  const [selectedCountry, setSelectedCountry] = useState('IN'); // State for the selected country
+  const [selectedCountry, setSelectedCountry] = useState("IN"); // State for the selected country
 
   const handleChange = (e) => {
     const { name, value, files } = e.target;
-    setFormData(prev => ({
+    setFormData((prev) => ({
       ...prev,
-      [name]: files ? files[0] : value
+      [name]: files ? files[0] : value,
     }));
   };
 
@@ -62,17 +68,17 @@ export default function App() {
     console.log("Form submitted:", formData);
     setModalMessage("Form submitted successfully!");
     setFormData({
-      fullName: '',
-      phone: '',
-      email: '',
-      message: '',
+      fullName: "",
+      phone: "",
+      email: "",
+      message: "",
       file: null,
     });
     setCaptchaVerified(false);
   };
 
   const handleCloseModal = () => {
-    setModalMessage('');
+    setModalMessage("");
   };
 
   // Drag and drop handlers
@@ -101,9 +107,9 @@ export default function App() {
     const droppedFiles = e.dataTransfer.files;
     if (droppedFiles.length > 0) {
       // Update formData with the first dropped file
-      setFormData(prev => ({
+      setFormData((prev) => ({
         ...prev,
-        file: droppedFiles[0]
+        file: droppedFiles[0],
       }));
     }
   };
@@ -115,7 +121,6 @@ export default function App() {
         - `items-center` ensures the content is vertically centered for better aesthetics.
       */}
       <div className="max-w-6xl w-full grid grid-cols-1 md:grid-cols-2 gap-10 lg:gap-16">
-
         <div className="flex flex-col justify-between h-full py-8 px-6 rounded-lg">
           {/* Top Section */}
           <div className="flex flex-col">
@@ -125,7 +130,9 @@ export default function App() {
             <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold leading-snug mt-4 text-white">
               Let’s Transform Your <br /> Vision Into Value.
             </h1>
-            <div className="text-3xl mt-15 text-white font-bold">Contact Us</div>
+            <div className="text-3xl mt-15 text-white font-bold">
+              Contact Us
+            </div>
           </div>
 
           {/* Contact Info */}
@@ -140,7 +147,9 @@ export default function App() {
 
           {/* Social Media */}
           <div className="mt-8">
-            <h4 className="font-semibold text-lg sm:text-xl text-white">Our Socials</h4>
+            <h4 className="font-semibold text-lg sm:text-xl text-white">
+              Our Socials
+            </h4>
             <div className="flex space-x-4 mt-3">
               {/* Twitter */}
               <a href="#" className="hover:opacity-80 transition">
@@ -171,7 +180,8 @@ export default function App() {
             Get in <span className="text-orange-500">touch</span>
           </h2>
           <p className="text-black text-sm sm:text-base text-center mb-6 font-bold">
-            We are always ready to help. There are many ways to contact us. <br /> You may drop us a line, give us a call or send an email.
+            We are always ready to help. There are many ways to contact us.{" "}
+            <br /> You may drop us a line, give us a call or send an email.
           </p>
           <form onSubmit={onSubmit} className="space-y-4">
             <input
@@ -226,19 +236,31 @@ export default function App() {
             {/* Drag and Drop File Input */}
             <div
               className={`w-full border-2 border-dashed rounded-lg p-6 text-center transition-colors cursor-pointer
-                ${isDragging ? 'border-orange-500 bg-gray-100' : 'border-gray-300'}`}
+                ${isDragging ? "border-orange-500 bg-gray-100" : "border-gray-300"
+                }`}
               onDragEnter={handleDragEnter}
               onDragOver={handleDragOver}
               onDragLeave={handleDragLeave}
               onDrop={handleDrop}
-              onClick={() => document.getElementById('file-input').click()}
+              onClick={() => document.getElementById("file-input").click()}
             >
               {formData.file ? (
-                <p className="text-gray-800 font-medium">{formData.file.name}</p>
+                <p className="text-gray-800 font-medium">
+                  {formData.file.name}
+                </p>
               ) : (
                 <>
-                  <svg xmlns="http://www.w3.org/2000/svg" className="mx-auto h-8 w-8 text-gray-400" viewBox="0 0 20 20" fill="currentColor">
-                    <path fillRule="evenodd" d="M3 17a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm3.707-8.293a1 1 0 00-1.414 0l-3 3a1 1 0 000 1.414l3 3a1 1 0 001.414-1.414L5.414 13H11a1 1 0 100-2H5.414l1.293-1.293a1 1 0 000-1.414z" clipRule="evenodd" />
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    className="mx-auto h-8 w-8 text-gray-400"
+                    viewBox="0 0 20 20"
+                    fill="currentColor"
+                  >
+                    <path
+                      fillRule="evenodd"
+                      d="M3 17a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm3.707-8.293a1 1 0 00-1.414 0l-3 3a1 1 0 000 1.414l3 3a1 1 0 001.414-1.414L5.414 13H11a1 1 0 100-2H5.414l1.293-1.293a1 1 0 000-1.414z"
+                      clipRule="evenodd"
+                    />
                   </svg>
                   <p className="text-gray-600 mt-2">Upload additional file</p>
                 </>
@@ -266,11 +288,12 @@ export default function App() {
 
             <Button
               className="
-                    py-2 
-                    px-5 
+                    !py-2 
+                    !px-5 
                     text-lg 
                     rounded-4xl
-                    w-full
+                    !w-full
+                    
                 "
             >
               Submit
