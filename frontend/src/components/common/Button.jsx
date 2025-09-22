@@ -16,7 +16,7 @@ const Button = ({ children, onClick, className, transparentOutline }) => {
     >
       <span
         className={clsx(
-          "flex items-center justify-center py-[9px] px-[23px] text-white transform translate-y-[-4px] h-[58px] font-bold text-[29px] leading-[30px] uppercase font-serif",
+          "flex items-center justify-center py-[9px] px-[23px] text-white transform translate-y-[-4px] h-[58px] text-[29px] leading-[30px] uppercase font-poppins",
           // Apply rounded-full to the inner span if the className contains it.
           className && className.includes('rounded-full') ? 'rounded-full' : 'rounded-[15px]',
           // Conditional gradient and offset logic

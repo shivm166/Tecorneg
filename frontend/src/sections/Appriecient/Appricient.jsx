@@ -88,7 +88,7 @@ const Appricient = () => {
 
   return (
     <div className="text-white py-12 px-6">
-      <h2 className="text-4xl font-bold mb-8 font-sans text-gray-200 text-center">Appreciation from Clients</h2>
+      <h2 className="text-4xl font-bold mb-8 font-poppins text-gray-200 text-center">Appreciation from Clients</h2>
       <div className="relative overflow-hidden w-full max-w-5xl mx-auto">
         <motion.div
           ref={sliderRef}

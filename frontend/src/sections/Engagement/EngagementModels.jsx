@@ -23,7 +23,7 @@ const EngagementModels = () => {
     return (
         <section className="py-16 px-4 sm:px-6 lg:px-8">
             <div className="max-w-7xl mx-auto">
-                <h1 className="text-4xl sm:text-5xl font-bold mb-6 text-center lg:text-left text-white">
+                <h1 className="font-poppins text-4xl sm:text-5xl  mb-6 text-center lg:text-left text-white">
                     Our Flexible Engagement Models
                 </h1>
                 <p className="text-lg mb-12 max-w-3xl mx-auto text-center lg:text-left lg:mx-0 text-white">

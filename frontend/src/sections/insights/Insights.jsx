@@ -90,7 +90,7 @@ const Insight = () => {
 
   return (
     <div className="text-white py-16 px-4 sm:px-8 lg:px-16 overflow-hidden">
-      <h1 className="text-4xl sm:text-5xl font-extrabold text-white mb-12">
+      <h1 className="text-4xl sm:text-5xl font-poppins text-white mb-12">
         Tecoreng Insights
       </h1>
       <Slider {...settings}>
@@ -110,7 +110,7 @@ const Insight = () => {
                 />
               </div>
               <div className="p-6 flex-grow flex flex-col">
-                <p className="text-lg font-semibold text-white mb-2">
+                <p className="text-lg font-poppins text-white mb-2">
                   {post.title}
                 </p>
                 <div className="flex items-center text-gray-400 text-sm mb-4">

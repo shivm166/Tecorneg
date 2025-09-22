@@ -38,7 +38,7 @@ const FooterSection = () => {
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 pb-12">
                     {/* Features Menu */}
                     <div>
-                        <h4 className="text-xl font-semibold mb-6 underline-offset-7 underline decoration-dotted">Features menu</h4>
+                        <h4 className="text-xl font-poppins mb-6 underline-offset-7 underline decoration-dotted">Features menu</h4>
                         <ul className="space-y-4">
                             {featureItems.map((item, index) => (
                                 <li key={index}>
@@ -52,7 +52,7 @@ const FooterSection = () => {
 
                     {/* Service Menu */}
                     <div>
-                        <h4 className="text-xl font-semibold mb-6 underline-offset-7 underline decoration-dotted">Service Menu</h4>
+                        <h4 className="text-xl font-poppins mb-6 underline-offset-7 underline decoration-dotted">Service Menu</h4>
                         <ul className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-1 gap-4 lg:space-y-4 lg:gap-0">
                             {serviceItems.map((item, index) => (
                                 <li key={index}>
@@ -66,7 +66,7 @@ const FooterSection = () => {
 
                     {/* Contact Information */}
                     <div className="md:col-span-2">
-                        <h4 className="text-xl font-semibold mb-6 underline-offset-7 underline decoration-dotted">Contact Information</h4>
+                        <h4 className="text-xl font-poppins mb-6 underline-offset-7 underline decoration-dotted">Contact Information</h4>
                         <div className="space-y-6">
                             <div className="flex items-start space-x-4">
                                 <HiOutlineLocationMarker className="text-orange-500 text-2xl flex-shrink-0 mt-1" />

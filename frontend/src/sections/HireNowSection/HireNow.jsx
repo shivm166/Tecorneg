@@ -3,12 +3,12 @@ import Button from "../../components/common/Button";
 
 const HireNow = () => {
   return (
-    <div className="font-sans text-white py-12">
+    <div className="font-poppins text-white py-12">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col-reverse lg:flex-row items-center justify-between gap-12">
 
         {/* Left Column: Text Content */}
         <div className="flex-1 text-center lg:text-left space-y-6">
-          <h1 className="text-2xl sm:text-4xl lg:text-5xl font-bold leading-snug font-poppins">
+          <h1 className="text-2xl sm:text-4xl lg:text-5xl  leading-snug font-poppins">
             Transfer your <br />
             enterprise with digital <br />
             innovation
@@ -27,7 +27,7 @@ const HireNow = () => {
           <div>
             <Button
               text="HIRE NOW"
-              className="bg-gradient-to-r from-orange-400 to-red-500 text-white font-bold py-2 rounded-lg hover:opacity-90 transition shadow-amber-600"
+              className="bg-gradient-to-r from-orange-400 to-red-500 text-white  py-2 rounded-lg hover:opacity-90 transition shadow-amber-600"
             >
               HIRE NOW
             </Button>

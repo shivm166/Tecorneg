@@ -49,7 +49,7 @@ export default function DevelopmentProcess() {
       {/* KEY CHANGE: Removed `min-h-screen` from the class list.
         The height will now be determined by the content itself, which is what you want.
       */}
-      <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-left mb-10 md:mb-16">
+      <h2 className="text-2xl sm:text-3xl md:text-4xl font-poppins text-left mb-10 md:mb-16">
         Our Development Process
       </h2>
 

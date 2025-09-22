@@ -124,13 +124,13 @@ export default function App() {
         <div className="flex flex-col justify-between h-full py-8 px-6 rounded-lg">
           {/* Top Section */}
           <div className="flex flex-col">
-            <h4 className="uppercase tracking-wide text-xl sm:text-2xl font-semibold text-white">
+            <h4 className="uppercase tracking-wide text-xl sm:text-2xl font-poppins text-white">
               We Are Here To Help You
             </h4>
-            <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold leading-snug mt-4 text-white">
+            <h1 className="text-3xl sm:text-4xl lg:text-5xl font-poppins leading-snug mt-4 text-white">
               Let’s Transform Your <br /> Vision Into Value.
             </h1>
-            <div className="text-3xl mt-15 text-white font-bold">
+            <div className="text-3xl mt-15 text-white font-poppins">
               Contact Us
             </div>
           </div>
@@ -179,7 +179,7 @@ export default function App() {
           <h2 className="text-center text-3xl sm:text-4xl lg:text-5xl font-bold mb-4">
             Get in <span className="text-orange-500">touch</span>
           </h2>
-          <p className="text-black text-sm sm:text-base text-center mb-6 font-bold">
+          <p className="text-black text-sm sm:text-base text-center mb-6 font-poppins">
             We are always ready to help. There are many ways to contact us.{" "}
             <br /> You may drop us a line, give us a call or send an email.
           </p>

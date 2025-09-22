@@ -117,12 +117,12 @@ const Service = () => {
     const [hovered, setHovered] = useState(null);
 
     return (
-        <div className=" py-12 px-4 sm:px-6 lg:px-8 flex flex-col items-center text-white font-sans">
+        <div className=" py-12 px-4 sm:px-6 lg:px-8 flex flex-col items-center text-white ">
             <div className="w-full max-w-7xl mx-auto">
-                <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4 tracking-tight text-left w-full font-poppins">
+                <h2 className="text-3xl sm:text-4xl lg:text-5xl mb-4 tracking-tight text-left w-full font-poppins">
                     Services We Offer
                 </h2>
-                <p className="text-white font-light leading-relaxed mb-4 tracking-tight text-left w-full max-w-2xl">
+                <p className="text-white font-poppins leading-relaxed mb-4 tracking-tight text-left w-full max-w-2xl">
                     We offer a full range of web app development services that make things better for enterprises and companies we work with. Our team of dedicated mobile app developers fulfils your diverse business requirements through a number of services. We specialise in the following services:
                 </p>
             </div>

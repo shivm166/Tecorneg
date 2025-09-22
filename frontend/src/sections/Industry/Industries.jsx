@@ -18,7 +18,7 @@ const Industries = () => {
         The height will now be determined by the content itself.
       */}
       <div className="max-w-7xl mx-auto mb-10">
-        <h1 className="text-4xl md:text-5xl font-extrabold text-white text-center sm:text-left">
+        <h1 className="text-4xl md:text-5xl font-poppins text-white text-center sm:text-left">
           Industries We are experts in
         </h1>
       </div>
@@ -36,7 +36,7 @@ const Industries = () => {
             />
             <div className="absolute inset-0 bg-neutral-950 opacity-40"></div>
             <div className="absolute inset-0 flex items-end p-6">
-              <h2 className="text-xl font-bold text-center items-center text-white">
+              <h2 className="text-xl font-poppins text-center items-center text-white">
                 {industry.title}
               </h2>
             </div>

@@ -19,7 +19,7 @@ import GetTouch from "../sections/GetInTouch/GetTouch";
 
 const Home = () => {
   return (
-    <div>
+    <div className="">
       <Header />
       <Container>
         <Hero />

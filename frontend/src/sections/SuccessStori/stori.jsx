@@ -75,7 +75,7 @@ const SuccessStories = () => {
 
   return (
     <div className=" text-white py-16 px-4 sm:px-8 md:px-16">
-      <h2 className="text-3xl sm:text-4xl font-semibold mb-12">
+      <h2 className="text-3xl sm:text-4xl font-poppins mb-12">
         Our Success Stories
       </h2>
 

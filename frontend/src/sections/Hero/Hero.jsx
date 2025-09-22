@@ -122,7 +122,7 @@ const Hero = ({ className }) => {
       */}
 
       {/* Content + Illustration */}
-      <div className="flex flex-col md:flex-row items-center justify-center gap-8 md:gap-12 lg:gap-16 flex-grow z-10 pt-16 sm:pt-20 pb-10 sm:pb-16">
+      <div className="flex flex-col md:flex-row items-center justify-center gap-8 md:gap-12 lg:gap-16 flex-grow z-10 pt-16 sm:pt-20 pb-10 sm:pb-16 ">
         {/*
           KEY CHANGE:
           - Changed `justify-between` to `justify-center` to keep content centered
@@ -142,7 +142,7 @@ const Hero = ({ className }) => {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
-            className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold leading-tight mb-4 sm:mb-6"
+            className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-poppins font-extrabold leading-tight mb-4 sm:mb-6"
           >
             Web & Mobile App <br />
             Development <br />
@@ -157,7 +157,7 @@ const Hero = ({ className }) => {
           >
             <Button
               text="GET STARTED"
-              className="bg-gradient-to-r from-orange-400 to-red-500 text-white font-bold py-2 px-4 rounded-md sm:py-3 sm:px-6 sm:rounded-lg hover:opacity-90 transition shadow-amber-600"
+              className="bg-gradient-to-r from-orange-400 to-red-500 text-white font-poppins py-2 px-4 rounded-md sm:py-3 sm:px-6 sm:rounded-lg hover:opacity-90 transition shadow-amber-600"
             >GET STARTED</Button>
           </motion.div>
         </motion.div>
@@ -175,7 +175,7 @@ const Hero = ({ className }) => {
       </div>
 
       {/* Stats Section at Bottom */}
-      <div className="w-full flex justify-center pb-6 sm:pb-10 z-20">
+      <div className="w-full flex justify-center pb-6 sm:pb-10 z-20 ">
         <HeroStats />
       </div>
     </section>

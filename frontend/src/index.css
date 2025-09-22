@@ -1,18 +1,25 @@
-@import "tailwindcss";
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+@import "tailwindcss";
 @import "slick-carousel/slick/slick.css";
 @import "slick-carousel/slick/slick-theme.css";
 
 
 @layer base {
   /* Default font (applies everywhere) */
-  html {
-    font-family: ui-serif, Georgia, serif;
+  body {
+    font-family:'poppins', sans-serif, Arial;
   }
 
   /* Optional override if you use font-serif class */
   .font-serif {
     font-family: "Playfair Display", ui-serif, Georgia, serif;
+  }
+
+  @theme {
+    --color-brand: #4f46e5;
+    --color-accent: #f43f5e;
+    --spacing-card: 2rem;
+    --radius-lg: 1rem;
   }
 }
 .outlined-text {

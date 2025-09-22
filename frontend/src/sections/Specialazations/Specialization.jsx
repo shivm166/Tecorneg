@@ -160,10 +160,10 @@ const Specialization = () => {
     <section className="py-12 sm:py-16 px-4 sm:px-6 lg:px-8 text-black">
       <div className="container mx-auto">
         <div className="max-w-5xl mx-auto mb-8 text-center sm:text-left">
-          <h2 className="text-2xl sm:text-3xl lg:text-5xl font-serif font-extrabold mb-4 text-white">
+          <h2 className="text-2xl font-poppins sm:text-3xl lg:text-5xl mb-4 text-white">
             Our Specialization
           </h2>
-          <p className="text-sm sm:text-base lg:text-lg font-light max-w-3xl text-white mx-auto sm:mx-0">
+          <p className="text-sm sm:text-base lg:text-lg font-poppins max-w-3xl text-white mx-auto sm:mx-0">
             We offer a full range of web app development services that make things
             better for enterprises and companies we work with. Our team of
             dedicated mobile app developers fulfils your diverse business
